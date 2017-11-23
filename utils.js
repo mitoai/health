@@ -10,7 +10,7 @@ function printValues (values) {
     const percent = (value - smallestValue) / (largestValue - smallestValue)
     const percentInt = Math.floor(percent * width)
     const s = Array.from(new Array(percentInt)).reduce((acc) => acc + '#', '') + Array.from(new Array(width - percentInt)).reduce((acc) => acc + ' ', '')
-    process.stdout.write(`${value}  ${time.toISOString()}  ${s}\n`)
+    process.stdout.write(`${time.toISOString()}  ${value}  ${s}\n`)
   }
 }
 

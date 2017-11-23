@@ -10,7 +10,7 @@
     "test": "eslint ."
   },
   "author": "Christian Budde Christensen <budde377@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "dependencies": {
     "@google-cloud/monitoring": "^0.4.1",
     "commander": "^2.11.0",

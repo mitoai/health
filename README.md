@@ -37,6 +37,10 @@ $ mithealth --help
 
 ### Pubsub
 
+Using linear regression over the number of undelivered messages. If the curve is increasing
+linearly with an R<sup>2</sup> value larger or equal to `-c`  over a sample period of `-m` 
+minutes, it is assumed that the stream is unhealthy. If unhealthy, the program exits with code `1`.
+
 ```
 $ mithealth pubsub --help
 
@@ -49,5 +53,6 @@ $ mithealth pubsub --help
 
     -m --sampleMinutes <minutes>  Sample duration in minutes. Default is 20 minutes.
     -c --confidence <confidence>  Confidence for passing between 0 and 1. Default is 0.75
+    -p --project <project>        Google Cloud project name. Defaults to "ntnu-smartmedia"
     -h, --help                    output usage information
 ```
