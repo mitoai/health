@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Add leading zeroes on printed values
+
 ## [0.1.2]
 
 - Change package name

@@ -1,16 +1,22 @@
 const monitoring = require('@google-cloud/monitoring')
 const regression = require('regression')
 
+function numDigitis (n) {
+  return Math.floor(Math.log10(n)) + 1
+}
+
 function printValues (values) {
   const sortedByValue = values.concat().sort(({value: v1}, {value: v2}) => v1 - v2)
   const smallestValue = sortedByValue[0].value
   const largestValue = sortedByValue[sortedByValue.length - 1].value
+  const largestValueLenght = numDigitis(largestValue)
   const width = 20
   for (const {value, time} of values) {
     const percent = (value - smallestValue) / (largestValue - smallestValue)
     const percentInt = Math.floor(percent * width)
     const s = Array.from(new Array(percentInt)).reduce((acc) => acc + '#', '') + Array.from(new Array(width - percentInt)).reduce((acc) => acc + ' ', '')
-    process.stdout.write(`${time.toISOString()}  ${value}  ${s}\n`)
+    const valueString = Array.from(new Array(largestValueLenght - numDigitis(value))).reduce((acc) => acc + ' ', '') + value
+    process.stdout.write(`${time.toISOString()}  ${valueString}  ${s}\n`)
   }
 }
 
