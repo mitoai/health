@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## [0.1.2]
+
 - Change package name
 
 ## [0.1.1]
