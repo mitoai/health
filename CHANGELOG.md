@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## [0.1.1]
+
 - Fix release script
 
 ## [0.1.0]
