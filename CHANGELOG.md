@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+
+## [0.1.0]
+
 - Add project option
 - Add more health messages
 - Updated documentation
