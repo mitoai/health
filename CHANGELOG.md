@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Fix release script
 
 ## [0.1.0]
 
