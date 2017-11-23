@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## [0.1.3]
+
 - Add leading zeroes on printed values
 
 ## [0.1.2]

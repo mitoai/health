@@ -1,6 +1,6 @@
 {
   "name": "@mitoai/health",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Health for Mito",
   "main": "index.js",
   "bin": {
