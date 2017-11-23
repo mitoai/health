@@ -1,3 +1,6 @@
 {
-  "pkgFiles": ["package.json", "package-lock.json"]
+  "pkgFiles": ["package.json", "package-lock.json"],
+  "npm": {
+    "access": "public"
+  }
 }
