@@ -8,7 +8,7 @@ This tool helps determine the whether different parts of the Mito ecosystem is u
 Install this tool with npm:
 
 ```
-npn i -g @mito/health
+npn i -g @mitoai/health
 ```
 
 This installs the command `mithealth` on the path.
