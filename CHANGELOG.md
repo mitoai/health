@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Fix print with zero messages on queue
+
 ## [0.1.3]
 
 - Add leading zeroes on printed values
