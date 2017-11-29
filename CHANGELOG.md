@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## [0.1.4]
+
 - Fix print with zero messages on queue
 
 ## [0.1.3]
