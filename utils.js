@@ -20,9 +20,9 @@ function printValues (values) {
   }
 }
 
-async function fetchValues (projectId, subscriptionId, sampleMinutes = 60) {
+async function fetchValues (projectId, subscriptionId, metric, sampleMinutes = 60) {
   const client = new monitoring.MetricServiceClient()
-  const filter = `metric.type = "pubsub.googleapis.com/subscription/num_undelivered_messages" AND resource.labels.subscription_id = "${subscriptionId}"`
+  const filter = `metric.type = "${metric}" resource.labels.subscription_id = "${subscriptionId}"`
   const request = {
     name: client.projectPath(projectId),
     filter: filter,
@@ -45,7 +45,7 @@ async function fetchValues (projectId, subscriptionId, sampleMinutes = 60) {
     }))
 }
 
-function isHealthy (values, confidence) {
+function isLinRegHealthy (values, confidence) {
   const data = values.map(({value}, i) => {
     return [i, value]
   })
@@ -53,8 +53,14 @@ function isHealthy (values, confidence) {
   return result.r2 > confidence ? result.equation[0] >= 0 : true
 }
 
+function isSumHealthy (values, condition) {
+  const sum = values.reduce((acc, {value}) => acc + value, 0)
+  return condition(sum)
+}
+
 module.exports = {
-  isHealthy,
+  isLinRegHealthy,
+  isSumHealthy,
   fetchValues,
   printValues
 }

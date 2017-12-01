@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Add new commands for sum test
+
 ## [0.1.4]
 
 - Fix print with zero messages on queue
