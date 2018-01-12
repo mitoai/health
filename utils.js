@@ -6,17 +6,21 @@ function numDigitis (n) {
 }
 
 function printValues (values) {
-  const sortedByValue = values.concat().sort(({value: v1}, {value: v2}) => v1 - v2)
-  const smallestValue = sortedByValue[0].value
-  const largestValue = sortedByValue[sortedByValue.length - 1].value
-  const largestValueLength = numDigitis(largestValue)
-  const width = 20
-  for (const {value, time} of values) {
-    const percent = (value - smallestValue) / (largestValue - smallestValue)
-    const percentInt = Math.floor(percent * width)
-    const s = Array.from(new Array(percentInt)).reduce((acc) => acc + '#', '') + Array.from(new Array(width - percentInt)).reduce((acc) => acc + ' ', '')
-    const valueString = Array.from(new Array(largestValueLength - numDigitis(value))).reduce((acc) => acc + ' ', '') + value
-    process.stdout.write(`${time.toISOString()}  ${valueString}  ${s}\n`)
+  try {
+    const sortedByValue = values.concat().sort(({value: v1}, {value: v2}) => v1 - v2)
+    const smallestValue = sortedByValue[0].value
+    const largestValue = sortedByValue[sortedByValue.length - 1].value
+    const largestValueLength = numDigitis(largestValue)
+    const width = 20
+    for (const {value, time} of values) {
+      const percent = (value - smallestValue) / (largestValue - smallestValue)
+      const percentInt = Math.floor(percent * width)
+      const s = Array.from(new Array(percentInt)).reduce((acc) => acc + '#', '') + Array.from(new Array(width - percentInt)).reduce((acc) => acc + ' ', '')
+      const valueString = Array.from(new Array(largestValueLength - numDigitis(value))).reduce((acc) => acc + ' ', '') + value
+      process.stdout.write(`${time.toISOString()}  ${valueString}  ${s}\n`)
+    }
+  } catch (err) {
+    console.log('Failed to print values', err)
   }
 }
 
