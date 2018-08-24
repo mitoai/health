@@ -1,20 +1,20 @@
 {
   "name": "@mitoai/health",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Health for Mito",
   "main": "index.js",
   "bin": {
     "mithealth": "./cli.js"
   },
   "scripts": {
-    "test": "eslint ."
+    "test": "echo wat"
   },
   "author": "Christian Budde Christensen <budde377@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@google-cloud/monitoring": "^0.4.1",
-    "commander": "^2.11.0",
-    "regression": "^2.0.0"
+    "@google-cloud/monitoring": "^0.6.0",
+    "commander": "^2.17.1",
+    "regression": "^2.0.1"
   },
   "bugs": {
     "url": "https://github.com/mitoai/health/issues"
@@ -25,13 +25,5 @@
   },
   "enignes": {
     "node": ">=8"
-  },
-  "devDependencies": {
-    "eslint": "^4.11.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1"
   }
 }
